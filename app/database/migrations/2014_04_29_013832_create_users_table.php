@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDatabase extends Migration {
+class CreateUsersTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -27,7 +27,7 @@ class CreateDatabase extends Migration {
 	    Schema::create('problems_files', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idProblem')->references('id')->on('problems');
+	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
 	        $table->string('dsTitle');
 	        $table->string('dsPath');
 	        $table->integer('tpType');
@@ -39,7 +39,7 @@ class CreateDatabase extends Migration {
 	    Schema::create('problems_descriptions', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idProblem')->references('id')->on('problems');
+	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
 	        $table->string('dsTitle');
 	        $table->longText('dsProblem');
 	        $table->string('dsLangue');
@@ -67,9 +67,9 @@ class CreateDatabase extends Migration {
 	    Schema::create('solutions', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idProblem')->references('id')->on('problems');
-	        $table->foreign('idCause')->references('id')->on('causes');
-	        $table->foreign('idUser')->references('id')->on('users');
+	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
+	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
+	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
 	        $table->string('dsTitle');
 	        $table->longText('dsSolution');
 	    });
@@ -80,8 +80,8 @@ class CreateDatabase extends Migration {
 	    Schema::create('causes', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idProblem')->references('id')->on('problems');
-	        $table->foreign('idUser')->references('id')->on('users');
+	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
+	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
 	        $table->string('dsTitle');
 	        $table->longText('dsCause');
 	    });
@@ -92,8 +92,8 @@ class CreateDatabase extends Migration {
 	    Schema::create('causes_actions', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idUser')->references('id')->on('users');
-	        $table->foreign('idCause')->references('id')->on('causes');
+	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
+	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
 	        $table->integer('tpAction');
 	    });
 
@@ -103,8 +103,8 @@ class CreateDatabase extends Migration {
 	    Schema::create('solutions_actions', function($table)
 	    {
 	        $table->increments('id');
-	        $table->foreign('idUser')->references('id')->on('users');
-	        $table->foreign('idCause')->references('id')->on('causes');
+	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
+	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
 	        $table->integer('tpAction');
 	    });
 
