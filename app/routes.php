@@ -21,3 +21,6 @@ Route::get('users', function()
 // UserController
 Route::get('user/{id}', 'UserController@showProfile');
 Route::get('user', 'UserController@showProfile');
+
+// ProblemController
+Route::resource('problem', 'ProblemController');

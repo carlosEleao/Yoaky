@@ -1,18 +1,16 @@
 @extends('layout')
 
-@section('content')
-    
-        <!-- Header -->
+@section('header')
             <header id="header" class="alt">
-                <h1 id="logo"><a href="index.html">Yoaky <span>Changing the world with ideas</span></a></h1>
+                <h1 id="logo"><a href="/">Yoaky <span>Changing the world with ideas</span></a></h1>
                 <nav id="nav">
                     <ul>
-                        <li class="current"><a href="index.html">Home</a></li>
+                        <li class="current"><a href="">Home</a></li>
                         <li class="submenu">
                             <a href="">Problems</a>
                             <ul>
-                                <li><a href="">Biggest problems</a></li>
-                                <li><a href="">Local problems</a></li>
+                                <li>{{ HTML::link('/problem', 'Problems')}} </li>
+                                <!-- <li><a href="">Local problems</a></li> -->
                                 <li><a href="">Submit a problem</a></li>
                             </ul>
                         </li>
@@ -20,7 +18,10 @@
                     </ul>
                 </nav>
             </header>
+@stop
 
+@section('content')
+    
         <!-- Banner -->     
             <section id="banner">
                 
@@ -154,19 +155,5 @@
                 </footer>
             
             </section>
-
-        <!-- Footer -->
-            <footer id="footer">
-            
-                <ul class="icons">
-                    <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
-                    <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
-                    <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
-                    <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
-                    <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-                </ul>
-                
-                <span class="copyright">&copy; Yoaky. All rights reserved.</a>.</span>
-            
-            </footer>
+           
 @stop

@@ -52,25 +52,12 @@ return array(
 			'prefix'   => '',
 		),
 
-		/*
-		'mysql' => array(
-			'driver'    => 'mysql',
-			'host'      => 'yoaky.com',
-			'database'  => 'yoakycom_db',
-			'username'  => 'yoakycom_db',
-			'password'  => 'Va&9nEO23r_K',
-			'charset'   => 'utf8',
-			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
-		), 
-		*/
-			
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'yoaky',
-			'username'  => 'root',
-			'password'  => '',
+			'database'  => 'yoakycom_db',
+			'username'  => 'yoakycom_db',
+			'password'  => 'Va&9nEO23r_K',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

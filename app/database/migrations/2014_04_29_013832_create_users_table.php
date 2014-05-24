@@ -12,103 +12,13 @@ class CreateUsersTable extends Migration {
 	 */
 	public function up()
 	{
-
-		/**
-		 * Problems table 
-		 */
-	    Schema::create('problems', function($table)
-	    {
-	        $table->increments('id');
-	    });
-
-	    /**
-		 * Create Problems files table
-		 */
-	    Schema::create('problems_files', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
-	        $table->string('dsTitle');
-	        $table->string('dsPath');
-	        $table->integer('tpType');
-	    });
-
-	    /**
-		 * Create Problems descriptions table
-		 */
-	    Schema::create('problems_descriptions', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
-	        $table->string('dsTitle');
-	        $table->longText('dsProblem');
-	        $table->string('dsLangue');
-	    });
-
-		/**
-		 * Create Users table
-		 */
 		Schema::create('users', function($table)
 	    {
 	        $table->increments('id');
-	        $table->string('dsEmail')->unique();
-	        $table->string('dsName');
-	        $table->string('dsPassword');
-	        $table->integer('nrAccess');
-	        $table->integer('qtPoints');
-	        $table->integer('tpLogin');
-	        $table->timestamp('dtCreation');
-	        $table->timestamp('dtLastLogin');
+	        $table->string('email')->unique();
+	        $table->string('name');
+	        $table->timestamps();
 	    });
-
-		/**
-		 * Create Solutions table
-		 */
-	    Schema::create('solutions', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
-	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
-	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
-	        $table->string('dsTitle');
-	        $table->longText('dsSolution');
-	    });
-
-		/**
-		 * Create Causes table
-		 */
-	    Schema::create('causes', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
-	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
-	        $table->string('dsTitle');
-	        $table->longText('dsCause');
-	    });
-
-		/**
-		 * Create Causes Action table
-		 */
-	    Schema::create('causes_actions', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
-	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
-	        $table->integer('tpAction');
-	    });
-
-	    /**
-		 * Create Solutions Action table
-		 */
-	    Schema::create('solutions_actions', function($table)
-	    {
-	        $table->increments('id');
-	        $table->integer('idUser')->foreign('idUser')->references('id')->on('users');
-	        $table->integer('idCause')->foreign('idCause')->references('id')->on('causes');
-	        $table->integer('tpAction');
-	    });
-
-
 	}
 
 	/**
@@ -118,14 +28,7 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-	    Schema::drop('problems');
-	    Schema::drop('problems_files');
-	    Schema::drop('problems_descriptions');
-	    Schema::drop('solutions');
-	    Schema::drop('solutions_actions');
-	    Schema::drop('causes');
-	    Schema::drop('causes_actions');
-	    Schema::drop('users');
+		Schema::drop('users');
 	}
 
 }

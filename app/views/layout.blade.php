@@ -29,6 +29,42 @@
 		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
 	</head>
 	<body class="index loading">
+		@section('header')
+            <header id="header">
+                <h1 id="logo"><a href="/">Yoaky <span>Changing the world with ideas</span></a></h1>
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="index.html">Home</a></li>
+                        <li class="submenu">
+                            <a href="">Problems</a>
+                            <ul>
+                                <li>{{ HTML::link('/problem', 'Problems')}} </li>
+                                <!-- <li><a href="">Local problems</a></li> -->
+                                <li><a href="">Submit a problem</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="button special">Sign Up</a></li>
+                    </ul>
+                </nav>
+            </header>
+        @show
+
 		@yield('content')
+
+		@section('footer')
+             <footer id="footer">
+            
+                <ul class="icons">
+                    <li><a href="#" class="icon circle fa-twitter"><span class="label">Twitter</span></a></li>
+                    <li><a href="#" class="icon circle fa-facebook"><span class="label">Facebook</span></a></li>
+                    <li><a href="#" class="icon circle fa-google-plus"><span class="label">Google+</span></a></li>
+                    <li><a href="#" class="icon circle fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+                </ul>
+                
+                <span class="copyright">&copy; Yoaky. All rights reserved.</a>.</span>
+            
+            </footer>
+        @show
 	</body>
 </html>
