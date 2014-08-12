@@ -24,3 +24,9 @@ Route::get('user', 'UserController@showProfile');
 
 // ProblemController
 Route::resource('problem', 'ProblemController');
+
+// AdminHomeController
+Route::resource('admin', 'AdmHomeController');
+
+// AdminProblemController
+Route::resource('adminProblem', 'AdmProblemController');
