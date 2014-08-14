@@ -11,7 +11,7 @@
             Problems 
           </div>
           <p>Manage the World Problems</p>
-          <p><a class="ui green button" href="admin/problem">Here <i class="right long arrow icon"></i></a></p>
+          <p><a class="ui green button" href="adminProblem">Here <i class="right long arrow icon"></i></a></p>
         </div>
         <div class="column">
           <div class="ui icon header">

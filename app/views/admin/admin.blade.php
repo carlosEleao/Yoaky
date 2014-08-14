@@ -8,8 +8,8 @@
 
  		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
-		<link rel="stylesheet" type="text/css" href="lib/semantic/css/semantic.min.css"/>
-		<link rel="stylesheet" type="text/css" href="css/admin/admin.css"/>
+		<link rel="stylesheet" type="text/css" href="{{{URL::to('lib/semantic/css/semantic.min.css')}}}"/>
+		<link rel="stylesheet" type="text/css" href="{{{URL::to('css/admin/admin.css')}}}"/>
 
 		<script src="js/jquery.min.js"></script> 
 	</head>

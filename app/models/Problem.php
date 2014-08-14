@@ -13,13 +13,13 @@ class Problem extends Eloquent {
 	}
 
 	public function editProblem($id, $dsTitle) {
-		$problem = User::find($id);
+		$problem = Problem::find($id);
 		$problem->dsTitle = $dsTitle;
 		$problem->save();
 	}
 
 	public function deleteProblem($id) {
-		$problem = User::find($id);
+		$problem = Problem::find($id);
 		$problem->delete();
 	}
 }

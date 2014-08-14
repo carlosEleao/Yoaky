@@ -19,8 +19,8 @@ class DatabaseSeeder extends Seeder {
 	    {
 	        $table->increments('id');
 	        $table->string('dsTitle');
-	       	$table->timestamp('dtCreation');
-	        $table->timestamp('dtLastUpdate');
+	       	$table->timestamp('updated_at');
+	        $table->timestamp('created_at');
 	    });
 
 
@@ -34,6 +34,8 @@ class DatabaseSeeder extends Seeder {
 	        $table->string('dsTitle');
 	        $table->string('dsPath');
 	        $table->integer('tpType');
+	        $table->timestamp('updated_at');
+	        $table->timestamp('created_at');
 	    });
 
 	    /**
@@ -46,6 +48,8 @@ class DatabaseSeeder extends Seeder {
 	        $table->string('dsTitle');
 	        $table->longText('dsProblem');
 	        $table->string('dsLangue');
+	        $table->timestamp('updated_at');
+	        $table->timestamp('created_at');
 	    });
 
 		/**
@@ -60,8 +64,9 @@ class DatabaseSeeder extends Seeder {
 	        $table->integer('nrAccess');
 	        $table->integer('qtPoints');
 	        $table->integer('tpLogin');
-	        $table->timestamp('dtCreation');
 	        $table->timestamp('dtLastLogin');
+	        $table->timestamp('updated_at');
+	        $table->timestamp('created_at');
 	    });
 
 	}

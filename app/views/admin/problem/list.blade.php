@@ -6,16 +6,18 @@
   <thead>
     <tr><th>Name</th>
     <th>Status</th>
-    <th>Notes</th>
+    <th>Replys</th>
   </tr></thead>
   <tbody>
 
+    @foreach (Problem::all() as $problem)
     <tr>
-      <td>John</td>
-      <td>Approved</td>
-      <td>None</td>
+      <td>{{$problem->dsTitle}}</td>
+      <td>{{$problem->created_at}}</td>
+      <td>{{$problem->updated_at}}</td>
     </tr>
-    
+    @endforeach
+
   </tbody>
   <tfoot>
     <tr><th colspan="3">
