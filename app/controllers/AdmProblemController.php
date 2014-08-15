@@ -4,7 +4,7 @@ class AdmProblemController extends BaseController {
 
 	public function index()
 	{
-		
+
 		return View::make('admin/problem/list');
 	}
 
@@ -19,5 +19,13 @@ class AdmProblemController extends BaseController {
 		$category = Input::get('category');
 		$Problem = new Problem();
 		$Problem->createProblem($name);
+		return Redirect::to('adminProblem');
+	}
+
+	public function delete($id) 
+	{
+		$Problem = new Problem();
+		$Problem->deleteProblem($id);
+		return Redirect::to('adminProblem');
 	}
 }

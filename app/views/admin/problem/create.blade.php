@@ -15,7 +15,19 @@
           <input name="category" placeholder="Category" type="text">
         </div>
       </div>
+
+      <div class="field">
+        <label>Language</label>
+        <select>
+          @foreach (Language::all() as $language)
+          <option value="{{$language->dsLangue}}">{{$language->dsLangue}}</option>
+          @endforeach;
+        </select>
+      </div>
+
       <input type="submit" class="ui blue submit button" text="Submit">
+
+
   </div>
 
   {{ Form::close() }}

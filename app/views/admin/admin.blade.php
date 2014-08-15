@@ -11,7 +11,7 @@
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('lib/semantic/css/semantic.min.css')}}}"/>
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('css/admin/admin.css')}}}"/>
 
-		<script src="js/jquery.min.js"></script> 
+		<script src="{{{URL::to('js/jquery.min.js')}}}"></script> 
 	</head>
 
 	<body id="admin">
