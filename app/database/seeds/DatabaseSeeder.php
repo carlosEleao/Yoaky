@@ -93,6 +93,30 @@ class DatabaseSeeder extends Seeder {
 		        $table->timestamp('created_at');
 		    });
 		}
+
+		/*
+		 * Admin Area
+		 */
+
+	    /*
+	     * Create Admin Users table
+	     */
+		if (!Schema::hasTable('admin_users'))
+		{
+			Schema::create('admin_users', function($table)
+		    {
+		        $table->increments('id');
+		        $table->string('dsEmail')->unique();
+		        $table->string('dsName');
+		        $table->string('dsPassword');
+		        $table->integer('nrAccess');
+		        $table->integer('tpLogin');
+		        $table->timestamp('dtLastLogin');
+		        $table->timestamp('updated_at');
+		        $table->timestamp('created_at');
+		    });
+		}
+
 	}
 
 }

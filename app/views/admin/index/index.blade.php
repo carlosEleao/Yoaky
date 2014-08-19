@@ -1,27 +1,32 @@
 @extends('admin/admin')
 
 @section('content')
-	<div class="ui page grid overview segment">
-    <div class="ui two wide column"></div>
-    <div class="twelve wide column">
-      <div class="ui three column center aligned stackable divided grid">
-        <div class="column">
-          <div class="ui icon header">
-            <i class="circular book link icon"></i>
-            Problems 
+	<div class="twelve wide column">
+    <div class="ui fluid form segment">
+        <div class="field">
+          <label>Username</label>
+          <div class="ui left labeled icon input">
+            <input type="text" placeholder="Username">
+            <i class="user icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
           </div>
-          <p>Manage the World Problems</p>
-          <p><a class="ui green button" href="adminProblem">Here <i class="right long arrow icon"></i></a></p>
         </div>
-        <div class="column">
-          <div class="ui icon header">
-            <i class="circular user link icon"></i>
-            Users
+        <div class="field">
+          <label>Password</label>
+          <div class="ui left labeled icon input">
+            <input type="password">
+            <i class="lock icon"></i>
+            <div class="ui corner label">
+              <i class="icon asterisk"></i>
+            </div>
           </div>
-          <p>Manage the system users</p>
-          <p><a class="ui green button" href="#">Here <i class="right long arrow icon"></i></a></p>
         </div>
-      </div>
+        <div class="ui error message">
+          <div class="header">We noticed some issues</div>
+        </div>
+        <div class="ui blue submit button">Login</div>
     </div>
   </div>
 @stop

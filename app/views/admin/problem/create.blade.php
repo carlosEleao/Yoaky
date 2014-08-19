@@ -2,6 +2,7 @@
 
 @section('content')
 
+<div class="twelve wide column">
   {{ Form::open(array('url' => 'adminProblem/add')) }}
 
   <div class="ui form segment">
@@ -31,5 +32,6 @@
   </div>
 
   {{ Form::close() }}
+</div>
 
 @stop

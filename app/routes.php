@@ -33,3 +33,8 @@ Route::resource('adminProblem', 'AdmProblemController');
 Route::get('adminProblem/create','AdmProblemController@create');
 Route::post('adminProblem/add','AdmProblemController@add');
 Route::get('adminProblem/delete/{id}','AdmProblemController@delete');
+
+// AdminUserController
+Route::resource('adminUser','AdmUserController');
+Route::resource('adminUser/create','AdmUserController@create');
+Route::resource('adminUser/add','AdmUserController@add');

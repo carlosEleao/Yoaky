@@ -6,25 +6,45 @@
 		<meta name="description" content="">
 		<meta name="keywords" content=""/>
 
- 		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700' rel='stylesheet' type='text/css'>
+ 		<link href='http://fonts.googleapis.com/css?family=SourceSansPro:400,700|OpenSans:300italic,400,300,700' rel='stylesheet' type='text/css'>
 
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('lib/semantic/css/semantic.min.css')}}}"/>
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('css/admin/admin.css')}}}"/>
 
 		<script src="{{{URL::to('js/jquery.min.js')}}}"></script> 
+		<script src="{{{URL::to('lib/semantic/javascript/semantic.min.js')}}}"></script>
 	</head>
 
 	<body id="admin">
 
 		@section('header')
-			<header id="header">
-				  <h1>Yoaky</h1>
-			</header>
+			<div class="ui small inverted menu">
+			  <a class="active item" href="<?php echo URL::to('admin'); ?>">
+			    <i class="home icon"></i> Home
+			  </a>
+			  <a class="item" href="<?php echo URL::to('adminProblem'); ?>">
+			    <i class="browser icon"></i> Problems
+			  </a>
+			  <a class="item" href="<?php echo URL::to('adminUser'); ?>">
+			    <i class="users icon"></i> Users
+			  </a>
+			  <div class="right menu">
+			    <div class="item">
+			        <div class="ui red button">Logout</div>
+			    </div>
+			  </div>
+			</div>
 		@show
 
 
 		<div id="content">
-			@yield('content')
+			<div class="ui column grid">
+			    <div class="two wide column">
+			    </div>
+				@yield('content')
+				<div class="two wide column">
+			    </div>
+			</div>
 		</div>
 
 		@section('footer')
