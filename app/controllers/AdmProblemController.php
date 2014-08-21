@@ -13,12 +13,46 @@ class AdmProblemController extends BaseController {
 		return View::make('admin/problem/create');
 	}
 
+	public function update($id)
+	{
+		return View::make('admin/problem/update', array("id"=>$id));
+	}
+
 	public function add()
 	{
-		$name = Input::get('name');
-		$category = Input::get('category');
+		$dsName = Input::get('name');
 		$Problem = new Problem();
-		$Problem->createProblem($name);
+
+		$idProblem = $Problem->createProblem($dsName);
+
+		$dsTitle = Input::get('title');
+		$idLanguage = Input::get('language');
+		$dsDescription = Input::get('description');
+		
+		foreach ($dsTitle as $key => $value) {
+			$ProblemDescription = new ProblemDescription();
+			$ProblemDescription->createDecription($idProblem, $idLanguage[$key], $dsTitle[$key], $dsDescription[$key]);
+		}
+		
+		return Redirect::to('adminProblem');
+	}
+
+	public function edit()
+	{
+		$dsName = Input::get('name');
+		$Problem = new Problem();
+
+		$idProblem = $Problem->createProblem($dsName);
+
+		$dsTitle = Input::get('title');
+		$idLanguage = Input::get('language');
+		$dsDescription = Input::get('description');
+
+		foreach ($dsTitle as $key => $value) {
+			$ProblemDescription = new ProblemDescription();
+			$ProblemDescription->createDecription($idProblem, $idLanguage[$key], $dsTitle[$key], $dsDescription[$key]);
+		}
+		
 		return Redirect::to('adminProblem');
 	}
 
@@ -26,6 +60,7 @@ class AdmProblemController extends BaseController {
 	{
 		$Problem = new Problem();
 		$Problem->deleteProblem($id);
+
 		return Redirect::to('adminProblem');
 	}
 }

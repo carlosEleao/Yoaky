@@ -10,9 +10,11 @@
 
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('lib/semantic/css/semantic.min.css')}}}"/>
 		<link rel="stylesheet" type="text/css" href="{{{URL::to('css/admin/admin.css')}}}"/>
+		@yield('stylesheet')
 
 		<script src="{{{URL::to('js/jquery.min.js')}}}"></script> 
 		<script src="{{{URL::to('lib/semantic/javascript/semantic.min.js')}}}"></script>
+		@yield('script')
 	</head>
 
 	<body id="admin">

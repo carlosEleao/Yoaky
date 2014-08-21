@@ -14,7 +14,7 @@
 
       @foreach (Problem::all() as $problem)
       <tr>
-        <td>{{$problem->dsTitle}}</td>
+        <td><a href="{{URL::to('adminProblem/update/'.$problem->id)}}">{{$problem->dsTitle}}</a></td>
         <td>{{$problem->created_at}}</td>
         <td>{{$problem->updated_at}}</td>
         <td><a href="{{URL::to('adminProblem/delete/'.$problem->id)}}"><i class="remove link icon"></i></a></td>

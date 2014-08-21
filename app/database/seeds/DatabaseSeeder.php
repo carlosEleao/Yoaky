@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder {
 		    Schema::create('languages', function($table)
 		    {
 		        $table->increments('id');
+		        $table->string('dsCod');
 		        $table->string('dsLangue');
 		        $table->timestamp('updated_at');
 		        $table->timestamp('created_at');

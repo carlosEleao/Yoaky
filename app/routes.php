@@ -32,6 +32,7 @@ Route::resource('admin', 'AdmHomeController');
 Route::resource('adminProblem', 'AdmProblemController');
 Route::get('adminProblem/create','AdmProblemController@create');
 Route::post('adminProblem/add','AdmProblemController@add');
+Route::get('adminProblem/update/{id}','AdmProblemController@update');
 Route::get('adminProblem/delete/{id}','AdmProblemController@delete');
 
 // AdminUserController

@@ -3,7 +3,6 @@
 class AdmUser extends Eloquent {
 
 	protected $table = "admin_users";
-	protected $id = "id"; 
 
 	public function createUser($name, $email, $password) {
 		$AdmUser = new AdmUser;
