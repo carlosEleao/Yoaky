@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder {
 		    Schema::create('problems_files', function($table)
 		    {
 		        $table->increments('id');
-		        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
+		        $table->integer('problem_id')->foreign('problem_id')->references('id')->on('problems');
 		        $table->string('dsTitle');
 		        $table->string('dsPath');
 		        $table->integer('tpType');
@@ -51,8 +51,8 @@ class DatabaseSeeder extends Seeder {
 		    Schema::create('problems_descriptions', function($table)
 		    {
 		        $table->increments('id');
-		        $table->integer('idProblem')->foreign('idProblem')->references('id')->on('problems');
-		        $table->integer('idLanguage')->foreign('idLanguage')->references('id')->on('language');
+		        $table->integer('problem_id')->foreign('problem_id')->references('id')->on('problems');
+		        $table->integer('language_id')->foreign('language_id')->references('id')->on('language');
 		        $table->string('dsTitle');
 		        $table->longText('dsProblem');
 		        $table->timestamp('updated_at');
@@ -94,10 +94,6 @@ class DatabaseSeeder extends Seeder {
 		        $table->timestamp('created_at');
 		    });
 		}
-
-		/*
-		 * Admin Area
-		 */
 
 	    /*
 	     * Create Admin Users table
