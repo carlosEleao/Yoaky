@@ -108,10 +108,12 @@ class DatabaseSeeder extends Seeder {
 		    {
 		        $table->increments('id');
 		        $table->string('dsEmail')->unique();
+		        $table->string('dsLogin')->unique();
 		        $table->string('dsName');
 		        $table->string('dsPassword');
 		        $table->integer('nrAccess');
 		        $table->integer('tpLogin');
+		        $table->boolean('blActive')->default(true);
 		        $table->timestamp('dtLastLogin');
 		        $table->timestamp('updated_at');
 		        $table->timestamp('created_at');

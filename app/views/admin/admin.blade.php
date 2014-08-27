@@ -6,14 +6,12 @@
 		<meta name="description" content="">
 		<meta name="keywords" content=""/>
 
- 		<link href='http://fonts.googleapis.com/css?family=SourceSansPro:400,700|OpenSans:300italic,400,300,700' rel='stylesheet' type='text/css'>
-
-		<link rel="stylesheet" type="text/css" href="{{{URL::to('lib/semantic/css/semantic.min.css')}}}"/>
-		<link rel="stylesheet" type="text/css" href="{{{URL::to('css/admin/admin.css')}}}"/>
+		{{ HTML::style('lib/semantic/css/semantic.min.css') }}
+		{{ HTML::style('css/admin/admin.css') }}
 		@yield('stylesheet')
 
-		<script src="{{{URL::to('js/jquery.min.js')}}}"></script> 
-		<script src="{{{URL::to('lib/semantic/javascript/semantic.min.js')}}}"></script>
+		{{ HTML::script('js/jquery.min.js') }}
+		{{ HTML::script('lib/semantic/javascript/semantic.min.js') }}
 		@yield('script')
 	</head>
 
@@ -40,12 +38,12 @@
 
 
 		<div id="content">
-			<div class="ui column grid">
-			    <div class="two wide column">
-			    </div>
+			<div class="ui page grid overview segment">
+				<div class="ui two wide column">
+				</div>
 				@yield('content')
-				<div class="two wide column">
-			    </div>
+				<div class="ui two wide column">
+				</div>
 			</div>
 		</div>
 
