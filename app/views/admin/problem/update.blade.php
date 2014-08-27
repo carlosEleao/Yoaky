@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="twelve wide column">
-  {{ Form::open(array('url' => 'adminProblem/edit')) }}
+  {{ Form::open(array('url' => 'adminProblem/edit/'.$id)) }}
 
   <div class="ui form segment">
       <div class="two fields">
@@ -17,28 +17,27 @@
         </div>
       </div>
 
-      <?php var_dump (Problem::find($id)->hasMany('ProblemDescription')); ?>
-      @foreach (Problem::find($id)->hasMany('ProblemDescription') as $description)
+      @foreach (Problem::find($id)->descriptions as $description)
 
       <hr/>
 
-      <h4>{{$description->Language->dsLanguage}}</h4>
+      <h4>{{$description->language->dsLanguage}}</h4>
 
       <div class="field">
-        <label>Language {{$language->dsLangue}}</label>
-        </select>
+        <label>Language {{$description->language->dsLangue}}</label>
+        <input name="idDescription[]" type="hidden" value="{{$description->id}}">
       </div>
       <div class="field">
         <div class="field">
           <label>Problem Name</label>
-          <input name="title[]" placeholder="Problem Title in {{$description->Language->dsLangue}}" type="text" value=" {{$description->dsTitle}}">
+          <input name="title[]" placeholder="Problem Title in {{$description->language->dsLangue}}" type="text" value=" {{$description->dsTitle}}">
         </div>
       </div>
       <div class="field">
         <label>Description</label>
-         <textarea name="description[]" id="description{{$description->Language->id}}">{{$description->dsProblem}}</textarea>
+         <textarea name="description[]" id="description{{$description->language->id}}">{{$description->dsProblem}}</textarea>
          <script>
-           CKEDITOR.replace( 'description{{$description->Language->id}}' );
+           CKEDITOR.replace( 'description{{$description->language->id}}' );
          </script>
       </div>
 

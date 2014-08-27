@@ -26,4 +26,9 @@ class Problem extends Eloquent {
 		}
 		$problem->delete();
 	}
+
+	public function descriptions()
+    {
+        return $this->hasMany('ProblemDescription');
+    }
 }

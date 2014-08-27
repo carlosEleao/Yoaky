@@ -37,20 +37,20 @@ class AdmProblemController extends BaseController {
 		return Redirect::to('adminProblem');
 	}
 
-	public function edit()
+	public function edit($id)
 	{
 		$dsName = Input::get('name');
 		$Problem = new Problem();
 
-		$idProblem = $Problem->createProblem($dsName);
+		$Problem->editProblem($id,$dsName);
 
 		$dsTitle = Input::get('title');
-		$idLanguage = Input::get('language');
+		$idDescription = Input::get('idDescription');
 		$dsDescription = Input::get('description');
 
 		foreach ($dsTitle as $key => $value) {
 			$ProblemDescription = new ProblemDescription();
-			$ProblemDescription->createDecription($idProblem, $idLanguage[$key], $dsTitle[$key], $dsDescription[$key]);
+			$ProblemDescription->editDecription($idDescription[$key], $id, $dsTitle[$key], $dsDescription[$key]);
 		}
 		
 		return Redirect::to('adminProblem');
