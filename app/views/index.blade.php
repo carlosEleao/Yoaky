@@ -12,6 +12,7 @@
                                 <li>{{ HTML::link('/problem', 'Problems')}} </li>
                                 <!-- <li><a href="">Local problems</a></li> -->
                                 <li><a href="">Submit a problem</a></li>
+                                <li>{{ HTML::link('/proposals', 'Submit a Problem Proposal')}} </li>
                             </ul>
                         </li>
                         <li><a href="#" class="button special">Sign Up</a></li>
