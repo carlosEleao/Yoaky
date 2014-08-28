@@ -34,13 +34,11 @@
                 <h1 id="logo"><a href="/">Yoaky <span>Changing the world with ideas</span></a></h1>
                 <nav id="nav">
                     <ul>
-                        <li class="current"><a href="index.html">Home</a></li>
-                        <li class="submenu">
-                            <a href="">Problems</a>
+                        <li class="current">{{ HTML::link('/', 'Home')}}</li>
+                        <li class="submenu"><a href="">Problems</a>
                             <ul>
                                 <li>{{ HTML::link('/problem', 'Problems')}} </li>
-                                <!-- <li><a href="">Local problems</a></li> -->
-                                <li><a href="">Submit a problem</a></li>
+                                <li>{{ HTML::link('/proposals', 'Submit a problem')}} </li>								
                             </ul>
                         </li>
                         <li><a href="#" class="button special">Sign Up</a></li>
