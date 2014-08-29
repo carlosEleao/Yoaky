@@ -30,7 +30,7 @@
       <div class="field">
         <div class="field">
           <label>Problem Name</label>
-          <input name="title[]" placeholder="Problem Title in {{$description->language->dsLangue}}" type="text" value=" {{$description->dsTitle}}">
+          <input name="title[]" placeholder="Problem Title in {{$description->language->dsLangue}}" type="text" value="{{$description->dsTitle}}">
         </div>
       </div>
       <div class="field">

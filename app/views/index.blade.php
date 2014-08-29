@@ -2,19 +2,19 @@
 
 @section('header')
             <header id="header" class="alt">
-                <h1 id="logo"><a href="/">Yoaky <span>Changing the world with ideas</span></a></h1>
+                <h1 id="logo"><a href="/">Yoaky <span>{{trans('messages.changing_the_world')}}</span></a></h1>
                 <nav id="nav">
                     <ul>
-                        <li class="current"><a href="">Home</a></li>
+                        <li class="current"><a href="">{{trans('messages.home')}}</a></li>
                         <li class="submenu">
-                            <a href="">Problems</a>
+                            <a href="">{{trans('messages.problems')}}</a>
                             <ul>
                                 <li>{{ HTML::link('/problem', 'Problems')}} </li>
                                 <!-- <li><a href="">Local problems</a></li> -->
-                                <li><a href="">Submit a problem</a></li>
+                                <li><a href="">{{trans('messages.submit_problem')}}/a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="button special">Sign Up</a></li>
+                        <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -36,11 +36,10 @@
                     <header>
                         <h2>YOAKY</h2>
                     </header>
-                    <p>Together we can solve the <strong>BIGGEST</strong></br>
-                         problems of our times </p>
+                    <p>{{ trans('messages.solve_biggest_problems')}} </p>
                     <footer>
                         <ul class="buttons vertical">
-                            <li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+                            <li><a href="#main" class="button fit scrolly">{{trans('messages.tell_me_more')}}</a></li>
                         </ul>
                     </footer>
                 
@@ -48,14 +47,14 @@
                 
             </section>
         
-        <!-- Main -->
+            <!-- Main -->
             <article id="main">
 
                 <header class="special container">
                     <span class="icon fa-bar-chart-o"></span>
-                    <h2>We believe that <strong>together</strong> we can find a solution for the biggest problems of our time</h2>
-                    <p>The idea is to isolate the biggest problems of our time, and, create a clever way to discuss about it
-                    each of us have a opinion now is time to put it together and find a real solution for those problems</p>
+                    <h2>{{trans('messages.we_believe_that_together')}}</h2>
+
+                    <p>{{trans('messages.the_idea_is')}}</p>
                 </header>
                 
                 
@@ -67,9 +66,9 @@
                                 <section>
                                     <span class="icon feature fa-check"></span>
                                     <header>
-                                        <h3>Isolate</h3>
+                                        <h3>{{trans('messages.step1')}}</h3>
                                     </header>
-                                    <p>Isolate the problem, study about that</p>
+                                    <p>{{trans('messages.step1_description')}}</p>
                                 </section>
                             
                             </div>
@@ -78,9 +77,9 @@
                                 <section>
                                     <span class="icon feature fa-check"></span>
                                     <header>
-                                        <h3>Find the cause(s)</h3>
+                                        <h3>{{trans('messages.step2')}}</h3>
                                     </header>
-                                    <p>Try to get the root couse of each problem</p>
+                                    <p>{{trans('messages.step2_description')}}</p>
                                 </section>
                             
                             </div>
@@ -89,9 +88,9 @@
                                 <section>
                                     <span class="icon feature fa-check"></span>
                                     <header>
-                                        <h3>Propose the solution</h3>
+                                        <h3>{{trans('messages.step3')}}</h3>
                                     </header>
-                                    <p>Discuss with the community to propose a solution for the problem</p>
+                                    <p>{{trans('messages.step3_description')}}</p>
                                 </section>
                             
                             </div>
@@ -102,7 +101,7 @@
                     <section class="wrapper style3 container special">
                     
                         <header class="major">
-                            <h2>Let's take a look on the problems that we are fixing right now. Don't forguet to let your opinion about this problems.</h2>
+                            <h2>{{trans('messages.look_current_problems')}}</h2>
                         </header>
                         
                         <div class="row">
@@ -132,7 +131,7 @@
                         
                         <footer class="major">
                             <ul class="buttons">
-                                <li><a href="#" class="button">See More</a></li>
+                                <li><a href="#" class="button">{{trans('messages.see_more')}}</a></li>
                             </ul>
                         </footer>
                     
@@ -144,13 +143,13 @@
             <section id="cta">
             
                 <header>
-                    <h2>Ready to share your <strong>ideas</strong>?</h2>
-                    <p>You can sign up to Yoaky to share your ideas</p>
+                    <h2>{{trans('messages.ready_to_share')}}</h2>
+                    <p>{{trans('messages.you_can_sing_up')}}</p>
                 </header>
                 <footer>
                     <ul class="buttons">
-                        <li><a href="#" class="button special">Sign-up</a></li>
-                        <li><a href="#" class="button">Log-in</a></li>
+                        <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
+                        <li><a href="#" class="button">{{trans('messages.log_in')}}</a></li>
                     </ul>
                 </footer>
             
