@@ -11,7 +11,7 @@
                             <ul>
                                 <li>{{ HTML::link('/problem', 'Problems')}} </li>
                                 <!-- <li><a href="">Local problems</a></li> -->
-                                <li><a href="">{{trans('messages.submit_problem')}}/a></li>
+                                <li><a href="">{{trans('messages.submit_problem')}}</a></li>
                             </ul>
                         </li>
                         <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
