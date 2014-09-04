@@ -16,9 +16,13 @@ class AdmUserController extends BaseController {
 	{
 		$name = Input::get('name');
 		$email = Input::get('email');
+		$login = Input::get('login');
 		$password = Input::get('password');
+		$type = Input::get('type');
+		$active = Input::get('active');
 		$AdmUser = new AdmUser();
-		$AdmUser->createUser($name, $email, $password);
+
+		$AdmUser->createUser($name, $email, $login, $password, $type, $active);
 	}
 
 	public function show($id)
@@ -36,16 +40,10 @@ class AdmUserController extends BaseController {
 		//
 	}
 
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
+	public function delete($id)
 	{
-		//
+		$AdmUser = new AdmUser();
+		$AdmUser->deleteUser($id);
 	}
 
 
