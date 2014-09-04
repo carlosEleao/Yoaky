@@ -40,6 +40,7 @@ Route::post('adminProblem/edit/{id}','AdmProblemController@edit');
 Route::get('adminProblem/delete/{id}','AdmProblemController@delete');
 
 // AdminUserController
-Route::resource('adminUser','AdmUserController');
 Route::resource('adminUser/create','AdmUserController@create');
 Route::resource('adminUser/add','AdmUserController@add');
+Route::post('adminUser/delete/{id}','AdmUserController@delete');
+Route::get('adminUser','AdmUserController@index');
