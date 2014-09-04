@@ -37,8 +37,8 @@
                         <li class="current">{{ HTML::link('/', 'Home')}}</li>
                         <li class="submenu"><a href="">Problems</a>
                             <ul>
-                                <li>{{ HTML::link('/problem', 'Problems')}} </li>
-                                <li>{{ HTML::link('/proposals', 'Submit a problem')}} </li>								
+                                <li>{{ HTML::link('/problem', trans('problems'))}}</li>
+                                <li>{{ HTML::link('/proposals', trans('messages.submit_problem'))}}</li>								
                             </ul>
                         </li>
                         <li><a href="#" class="button special">Sign Up</a></li>

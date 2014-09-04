@@ -52,7 +52,7 @@
                       <textarea name="motivation" placeholder="Motivation" rows="7"></textarea>
                     </div>
                   </div>
-                                    <div class="row half">
+                  <div class="row half">
                     <div class="12u">
                       <textarea name="impact" placeholder="Impact" rows="7"></textarea>
                     </div>
