@@ -9,9 +9,9 @@
                         <li class="submenu">
                             <a href="">{{trans('messages.problems')}}</a>
                             <ul>
-                                <li>{{ HTML::link('/problem', 'Problems')}} </li>
+                                <li>{{ HTML::link('/problem', trans('problems'))}}</li>
                                 <!-- <li><a href="">Local problems</a></li> -->
-                                <li><a href="">{{trans('messages.submit_problem')}}</a></li>
+                                <li>{{ HTML::link('/proposals', trans('messages.submit_problem'))}}</a></li>
                             </ul>
                         </li>
                         <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
