@@ -32,7 +32,6 @@
 			</div>
 		@show
 
-
 		<div id="content">
 			<div class="ui page grid overview segment">
 				<div class="ui two wide column">
@@ -40,6 +39,7 @@
 				<div class="twelve wide column">
 					<div class="ui message hidden">
 						<i class="close icon"></i>
+						<div class="header"></div>
 						<p></p>
 					</div>
 					@yield('content')

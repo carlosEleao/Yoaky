@@ -12,6 +12,9 @@
         <div class="field">
           <label>Email</label>
           <input type="text" name="email" placeholder="Email" >
+          <div id="user-exists" class="ui red pointing up label hidden">
+            An user with this email already exists
+          </div>
         </div>
       </div>
 
@@ -19,6 +22,9 @@
         <div class="field">
           <label>Login</label>
           <input name="login" type="text" placeholder="Login">
+          <div id="login-exists" class="ui red pointing up label hidden">
+            An user with this login already exists
+          </div>
         </div>
         <div class="field">
           <label>Password</label>

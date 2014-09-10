@@ -20,27 +20,7 @@
         </tr>
       </thead>
       <tbody>
-
-        @foreach (AdmUser::all() as $user)
-        <tr id="{{$user->id}}">
-          <td>{{$user->id}}</td>
-          <td>{{$user->dsLogin}}</td>
-          <td>{{$user->getLoginType($user->id)}}</td>
-          <td style="padding-left: 20px">
-            @if ($user->blActive == 1)
-              <i class="green icon checkmark"></i>
-            @else
-              <i class="red icon close"></i>
-            @endif
-          </td>
-          <td>
-            <a href="#" class="bt-del-user">
-              <div class="ui mini red button">Delete</div>
-            </a>
-          </td>
-        </tr>
-        @endforeach
-
+        <!-- To be filled by JS -->
       </tbody>
       <tfoot>
         <tr>

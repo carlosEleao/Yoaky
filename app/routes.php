@@ -40,7 +40,9 @@ Route::post('adminProblem/edit/{id}','AdmProblemController@edit');
 Route::get('adminProblem/delete/{id}','AdmProblemController@delete');
 
 // AdminUserController
-Route::resource('adminUser/create','AdmUserController@create');
-Route::resource('adminUser/add','AdmUserController@add');
+Route::post('adminUser/add','AdmUserController@add');
 Route::post('adminUser/delete/{id}','AdmUserController@delete');
 Route::get('adminUser','AdmUserController@index');
+Route::get('adminUser/getAll','AdmUserController@getAll');
+Route::post('adminUser/emailexists','AdmUserController@emailexists');
+Route::post('adminUser/loginexists','AdmUserController@loginexists');

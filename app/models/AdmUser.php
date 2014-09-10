@@ -48,14 +48,16 @@ class AdmUser extends Eloquent {
 		}
 	}
 
-	public function emailExists()
+	public function emailExists($email)
 	{
-		
+		$count = AdmUser::where('dsEmail', '=', $email)->count();
+		return $count > 0;
 	}
 
-	public function loginExists()
+	public function loginExists($login)
 	{
-		
+		$count = AdmUser::where('dsLogin', '=', $login)->count();
+		return $count > 0;	
 	}
 
 }
