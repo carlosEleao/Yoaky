@@ -7,18 +7,21 @@
 @section('content')
 
 <div class="twelve wide column">
-  {{ Form::open(array('url' => 'adminProblem/add')) }}
+  {{ Form::open(array('url' => 'adminProblem/add', 'method' => 'post' , 'enctype' => 'multipart/form-data')) }}
 
   <div class="ui form segment">
-      <div class="two fields">
-        <div class="field">
-          <label>Problem Name (Internal)</label>
-          <input name="name" placeholder="Problem Name" type="text">
-        </div>
+      
+      <div class="field">
+        <label>Problem Name (Internal)</label>
+        <input name="name" placeholder="Problem Name" type="text">
       </div>
 
-     
 
+      <div class="field">
+        <label>Problem Image</label>
+        <input name="image" placeholder="Problem Image" type="file">
+      </div>
+     
       @foreach (Language::all() as $language)
 
       <hr/>

@@ -28,7 +28,17 @@ class AdmProblemController extends BaseController {
 		$dsTitle = Input::get('title');
 		$idLanguage = Input::get('language');
 		$dsDescription = Input::get('description');
-		
+
+		if (Input::hasFile('image'))
+		{
+    		$File = new ProblemFile();
+    		$dsPath = FileUtils::getImagePath($idProblem).FileUtils::getImageName();
+    		$idFile = $File->createFile($idProblem, $dsName, $dsPath, Type::Image);
+    		FileUtils::saveImage($dsPath, Input::file('image')->getRealPath());
+		}else {
+			die("não veio o arquivo");
+		}
+
 		foreach ($dsTitle as $key => $value) {
 			$ProblemDescription = new ProblemDescription();
 			$ProblemDescription->createDecription($idProblem, $idLanguage[$key], $dsTitle[$key], $dsDescription[$key]);
