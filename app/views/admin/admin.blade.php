@@ -37,7 +37,7 @@
 				<div class="ui two wide column">
 				</div>
 				<div class="twelve wide column">
-					<div class="ui message hidden">
+					<div class="ui message" style="display: none;">
 						<i class="close icon"></i>
 						<div class="header"></div>
 						<p></p>
@@ -55,6 +55,9 @@
 			</footer>
 		@show
 
+		<script type="text/javascript">
+			var _baseUrl = '{{URL::to("/")}}';
+		</script>
 		{{ HTML::script('js/jquery.min.js') }}
 		{{ HTML::script('lib/semantic/javascript/semantic.min.js') }}
 		{{ HTML::script('js/admin/common.js')}}

@@ -1,5 +1,20 @@
+var $name,
+	$email,
+	$login,
+	$password,
+	$type,
+	$active;
+
 // Execute when after HTML is loaded
 $(document).ready(function(){
+
+	$name 	  = $('input[name="name"]'),
+	$email 	  = $('input[name="email"]'),
+	$login 	  = $('input[name="login"]'),
+	$password = $('input[name="password"]'),
+	$type 	  = $('input[name="type"]'),
+	$active   = $('input[name="status"]');
+
 	// Gets all admin users
 	getUsers();
 
@@ -11,7 +26,7 @@ $(document).ready(function(){
 function getUsers()
 {
 	$.ajax({
-        url: '/yoaky/adminUser/getAll',
+        url: _baseUrl + '/adminUser/getAll',
         type: 'get',
         success : function(data){
     		onSuccessGetUsers(data);
@@ -23,16 +38,16 @@ function getUsers()
 function createUser()
 {
 	var fields = {
-		name : $('input[name="name"]').val(),
-		email : $('input[name="email"]').val(),
-		login : $('input[name="login"]').val(),
-		password : $('input[name="password"]').val(),
-		type : $('input[name="type"]').val(),
-		active : $('input[name="status"]').is(':checked')
+		name : $name.val(),
+		email : $email.val(),
+		login : $login.val(),
+		password : $password.val(),
+		type : $type.val(),
+		active : $active.is(':checked')
 	}
 
 	$.ajax({
-        url: '/yoaky/adminUser/add',
+        url: _baseUrl + '/adminUser/add',
         type: 'post',
         data: fields,
         success : function(){
@@ -45,7 +60,7 @@ function createUser()
 function deleteUser(userId)
 {
 	$.ajax({
-        url: '/yoaky/adminUser/delete/' + userId,
+        url: _baseUrl + '/adminUser/delete/' + userId,
         type: 'post',
         success : function(){
     		onSuccessDeleted();
@@ -58,17 +73,18 @@ function onSuccessUserCreated(){
 	$('.ui.modal').modal('hide');
 	var message = new AdminTopMessage();
 	message.displaySuccess('Administrator created successfully!');
-	message = null;
 
 	// Gets all users
 	getUsers();
+
+	// Clears all fields
+	clearFormFields();
 }
 
 // Called when admin user is deleted successfully
 function onSuccessDeleted(){
 	var message = new AdminTopMessage();
 	message.displaySuccess('Administrator deleted successfully!');
-	message = null;
 
 	// Gets all users
 	getUsers();
@@ -107,6 +123,9 @@ function onSuccessGetUsers(users){
 	$('.bt-del-user').click(function(){
 		var currentTr = $(this).closest('tr');
 		var userId = currentTr.attr('id');
+		currentTr.transition({
+			animation : 'slide up'
+		});
 		deleteUser(userId);
 	});
 }
@@ -118,7 +137,7 @@ function validateEmail(email){
 		var data = { 'email' : email };
 
 		$.ajax({
-	        url: '/yoaky/adminUser/emailexists',
+	        url: _baseUrl + '/adminUser/emailexists',
 	        type: 'post',
 	        data: data,
 	        success : function(data){
@@ -140,17 +159,17 @@ function validateLogin(login){
 		var data = { 'login' : login };
 
 		$.ajax({
-	        url: '/yoaky/adminUser/loginexists',
+	        url: _baseUrl + '/adminUser/loginexists',
 	        type: 'post',
 	        data: data,
 	        success : function(data){
 	        	
 	        	if(data['login_exists']){
 	        		$('#login-exists').removeClass('hidden');
-	        		canSubmit = false;
+	        		_canSubmit = false;
 	        	} else {
 	        		$('#login-exists').addClass('hidden');
-	        		canSubmit = true;
+	        		_canSubmit = true;
 	        	}
 	        }
 	    });
@@ -158,13 +177,25 @@ function validateLogin(login){
 }
 
 // Modal add user
-var canSubmit = true;
+var _canSubmit = true;
 
 // Setups add admin user form
 function setupForm(){
 	setupFormValidations();
 	setupFormControls();
 }
+
+// Clear all add user modal fields
+function clearFormFields()
+{
+	$name.val('');
+	$email.val('');
+	$login.val('');
+	$password.val('');
+	$type.val('');
+	$active.val('');
+}
+
 
 // Setups form controls events
 function setupFormControls(){
@@ -213,7 +244,7 @@ function setupFormValidations(){
 		  inline:true,
 		  on: 'submit',
 		  onSuccess : function(event){
-		  	if(canSubmit)
+		  	if(_canSubmit)
 		  		createUser();
 		  }
 		}

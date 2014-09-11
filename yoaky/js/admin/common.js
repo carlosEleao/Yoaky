@@ -13,14 +13,13 @@ function AdminTopMessage()
 	this.successHeader = 'Success';
 	this.failureClassColor = 'red';
 	this.failureHeader = 'Oops, something went wrong';
-	this.hiddenClass = 'hidden';
 	this.message = $('.ui.message');
 }
 
 // Display admin top message considering message type
 AdminTopMessage.prototype.display = function(classToAdd, title, message)
 {
-	// Cleans all current information
+	// Clears all current information
 	this.message.find('p').empty();
 	this.message.find('.header').empty();
 	this.message.removeClass(this.successClassColor);
@@ -29,7 +28,7 @@ AdminTopMessage.prototype.display = function(classToAdd, title, message)
 	this.message.addClass(classToAdd);
 	this.message.find('.header').append(title);
 	this.message.find('p').append(message);
-	this.message.removeClass(this.hiddenClass);
+	this.message.fadeIn();
 }
 
 // Display admin top success message
