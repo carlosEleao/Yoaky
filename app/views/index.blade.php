@@ -10,7 +10,6 @@
                             <a href="">{{trans('messages.problems')}}</a>
                             <ul>
                                 <li>{{ HTML::link('/problem', 'Problems')}} </li>
-                                <!-- <li><a href="">Local problems</a></li> -->
                                 <li><a href="">{{trans('messages.submit_problem')}}</a></li>
                             </ul>
                         </li>
