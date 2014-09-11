@@ -9,10 +9,6 @@
 		{{ HTML::style('lib/semantic/css/semantic.min.css') }}
 		{{ HTML::style('css/admin/admin.css') }}
 		@yield('stylesheet')
-
-		{{ HTML::script('js/jquery.min.js') }}
-		{{ HTML::script('lib/semantic/javascript/semantic.min.js') }}
-		@yield('script')
 	</head>
 
 	<body id="admin">
@@ -36,12 +32,18 @@
 			</div>
 		@show
 
-
 		<div id="content">
 			<div class="ui page grid overview segment">
 				<div class="ui two wide column">
 				</div>
-				@yield('content')
+				<div class="twelve wide column">
+					<div class="ui message hidden">
+						<i class="close icon"></i>
+						<div class="header"></div>
+						<p></p>
+					</div>
+					@yield('content')
+				</div>
 				<div class="ui two wide column">
 				</div>
 			</div>
@@ -52,6 +54,11 @@
 				
 			</footer>
 		@show
+
+		{{ HTML::script('js/jquery.min.js') }}
+		{{ HTML::script('lib/semantic/javascript/semantic.min.js') }}
+		{{ HTML::script('js/admin/common.js')}}
+		@yield('script')
 
 	</body>
 </html>

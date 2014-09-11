@@ -9,11 +9,12 @@
                         <li class="submenu">
                             <a href="">{{trans('messages.problems')}}</a>
                             <ul>
-                                <li>{{ HTML::link('/problem', 'Problems')}} </li>
-                                <li><a href="">{{trans('messages.submit_problem')}}</a></li>
+                                <li>{{ HTML::link('/problem', trans('problems'))}}</li>
+                                <!-- <li><a href="">Local problems</a></li> -->
+                                <li>{{ HTML::link('/proposals', trans('messages.submit_problem'))}}</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
+                        <li><a href="#" class="button special">{{trans('messages.sign_up')}}</a></li>
                     </ul>
                 </nav>
             </header>
@@ -143,11 +144,11 @@
             
                 <header>
                     <h2>{{trans('messages.ready_to_share')}}</h2>
-                    <p>{{trans('messages.you_can_sing_up')}}</p>
+                    <p>{{trans('messages.you_can_sign_up')}}</p>
                 </header>
                 <footer>
                     <ul class="buttons">
-                        <li><a href="#" class="button special">{{trans('messages.sing_up')}}</a></li>
+                        <li><a href="#" class="button special">{{trans('messages.sign_up')}}</a></li>
                         <li><a href="#" class="button">{{trans('messages.log_in')}}</a></li>
                     </ul>
                 </footer>
