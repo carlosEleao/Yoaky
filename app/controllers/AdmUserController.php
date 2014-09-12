@@ -4,7 +4,7 @@ class AdmUserController extends BaseController {
 
 	public function index()
 	{
-		return View::make('admin/user/list');
+		return View::make('admin/user/list', array('home_active' => '', 'problem_active' => '', 'submitted_problem_active' => '', 'user_active' => 'active'));
 	}
 
 	public function getAll()

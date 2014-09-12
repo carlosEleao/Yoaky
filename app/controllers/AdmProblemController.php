@@ -5,12 +5,12 @@ class AdmProblemController extends BaseController {
 	public function index()
 	{
 
-		return View::make('admin/problem/list');
+		return View::make('admin/problem/list', array('home_active' => '', 'problem_active' => 'active', 'submitted_problem_active' => '', 'user_active' => ''));
 	}
 
 	public function create()
 	{
-		return View::make('admin/problem/create');
+		return View::make('admin/problem/create', array('home_active' => '', 'problem_active' => 'active', 'submitted_problem_active' => '', 'user_active' => ''));
 	}
 
 	public function update($id)

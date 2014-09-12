@@ -1,6 +1,9 @@
 @extends('admin/admin')
 
 @section('content')
+
+  <h2 class="ui dividing header">Home</h2>
+
 	<div class="twelve wide column">
     <div class="ui fluid form segment">
         <div class="field">

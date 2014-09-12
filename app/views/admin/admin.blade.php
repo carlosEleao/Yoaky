@@ -15,14 +15,17 @@
 
 		@section('header')
 			<div class="ui small inverted menu">
-			  <a class="active item" href="<?php echo URL::to('admin'); ?>">
+			  <a class="item <?php if (isset($home_active)) echo $home_active; ?>" href="<?php echo URL::to('admin'); ?>">
 			    <i class="home icon"></i> Home
 			  </a>
-			  <a class="item" href="<?php echo URL::to('adminProblem'); ?>">
+			  <a class="item <?php if (isset($problem_active)) echo $problem_active; ?>" href="<?php echo URL::to('adminProblem'); ?>">
 			    <i class="browser icon"></i> Problems
 			  </a>
-			  <a class="item" href="<?php echo URL::to('adminUser'); ?>">
-			    <i class="users icon"></i> Users
+			  <a class="item <?php if (isset($submitted_problem_active)) echo $submitted_problem_active; ?>" href="<?php echo URL::to(''); ?>">
+			    <i class="browser icon"></i> Submitted Problems
+			  </a>
+			  <a class="item <?php if (isset($user_active)) echo $user_active; ?>" href="<?php echo URL::to('adminUser'); ?>">
+			    <i class="users icon"></i> Administrators
 			  </a>
 			  <div class="right menu">
 			    <div class="item">

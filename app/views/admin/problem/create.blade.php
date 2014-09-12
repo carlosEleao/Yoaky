@@ -6,6 +6,8 @@
 
 @section('content')
 
+<h2 class="ui dividing header">Problems</h2>
+
 <div class="twelve wide column">
   {{ Form::open(array('url' => 'adminProblem/add', 'method' => 'post' , 'enctype' => 'multipart/form-data')) }}
 
