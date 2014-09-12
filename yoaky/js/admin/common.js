@@ -12,7 +12,7 @@ function AdminTopMessage()
 	this.successClassColor = 'green';
 	this.successHeader = 'Success';
 	this.failureClassColor = 'red';
-	this.failureHeader = 'Oops, something went wrong';
+	this.failureHeader = 'Oops, something went wrong :(';
 	this.message = $('.ui.message');
 }
 
