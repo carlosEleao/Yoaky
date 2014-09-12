@@ -30,6 +30,9 @@ function getUsers()
         type: 'get',
         success : function(data){
     		onSuccessGetUsers(data);
+        },
+        error : function(){
+        	onGenericError();
         }
     });
 }
@@ -52,6 +55,9 @@ function createUser()
         data: fields,
         success : function(){
     		onSuccessUserCreated();
+        },
+        error : function(){
+        	onGenericError();
         }
     });
 }
@@ -64,8 +70,21 @@ function deleteUser(userId)
         type: 'post',
         success : function(){
     		onSuccessDeleted();
+        },
+        error : function(){
+        	onGenericError();
         }
     });
+}
+
+// Called when a error occurs in ajax request.
+// Note that when we return Json, action performed on success will also be executed.
+// Please refer to http://stackoverflow.com/questions/19035557/jsonp-request-error-handling
+// for more details.
+function onGenericError(){
+	$('.ui.modal').modal('hide');
+	var message = new AdminTopMessage();
+	message.displayFailure('There was a problem while attempting to reach the server. Please try again.');
 }
 
 // Called when user is created successfully
@@ -148,6 +167,9 @@ function validateEmail(email){
 	        		$('#user-exists').addClass('hidden');
 	        		canSubmit = true;
 	        	}
+	        },
+	        error : function(){
+	        	onGenericError();
 	        }
 	    });
 	}
@@ -171,6 +193,9 @@ function validateLogin(login){
 	        		$('#login-exists').addClass('hidden');
 	        		_canSubmit = true;
 	        	}
+	        },
+	        error : function(){
+	        	onGenericError();
 	        }
 	    });
 	}
